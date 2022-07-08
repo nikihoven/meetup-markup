@@ -30,8 +30,66 @@
     background-position: center left;
     background-size: 100%;
 
+    @media screen and (max-width: 1278px) {
+      top: 770px;
+      background-size: 50%;
+      background-position-x: right;
+    }
+
     @media screen and (max-width: 1023px) {
       content: unset;
+    }
+  }
+
+  &__mission {
+    font-family: var(--font-montserrat);
+    font-size: 22px;
+    line-height: 27px;
+    color: var(--color-dark);
+    position: absolute;
+    transform: translateY(-85%);
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    justify-content: center;
+    flex-direction: column;
+    width: 480px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 43px 10px rgb(187 187 187 / 58%), 0 0 50px 40px rgb(68 38 255 / 46%);
+    background-color: var(--color-light);
+    aspect-ratio: 48 / 32;
+    padding: 0 40px;
+
+    @media screen and (max-width: 1279px) {
+      transform: translateY(-100%);
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 110%;
+      aspect-ratio: 7 / 3;
+      left: 50%;
+      transform: translateY(-100%) translateX(-50%);
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+      text-align: start;
+      line-height: 22px;
+    }
+
+    @media screen and (max-width: 575px) {
+      font-size: 16px;
+      line-height: 19px;
+      width: 100%;
+      aspect-ratio: 5 / 3;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 14px;
+      line-height: 17px;
     }
   }
 
@@ -148,7 +206,8 @@
   }
 
   &__text {
-    margin-top: 300px;
+    position: relative;
+    margin-top: 380px;
     padding: 130px 40px;
     border-radius: 43px;
     background-color: var(--color-purple-transparent);

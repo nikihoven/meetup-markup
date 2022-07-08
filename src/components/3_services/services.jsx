@@ -41,21 +41,45 @@ const servicesList = [
 ]
 
 const Services = () => {
-    const [animated, setAnimated] = useState(false)
+    const [animated, setAnimated] = useState({portal: false, arrow: false})
+    const [className, setClassName] = useState('services')
 
     const {ref, inView} = useInView({
         threshold: 0.1,
         triggerOnce: true
     })
 
+    const {ref: arrowRef, inView: arrowInView} = useInView({
+        threshold: 0.2,
+        triggerOnce: true
+    })
+
     useEffect(() => {
         if (inView) {
-            setAnimated(true)
+            setAnimated(({arrow}) => ({arrow, portal: true}))
         }
     }, [inView])
 
+    useEffect(() => {
+        if (arrowInView) {
+            setAnimated(({portal}) => ({portal, arrow: true}))
+        }
+    }, [arrowInView])
+
+    useEffect(() => {
+        if (animated.portal && animated.arrow) {
+            setClassName('services services--animated services--arrow')
+        } else if (animated.portal && !animated.arrow) {
+            setClassName('services services--animated')
+        } else if (!animated.portal && animated.arrow) {
+            setClassName('services services--arrow')
+        } else {
+            setClassName('services')
+        }
+    }, [animated.arrow, animated.portal])
+
     return (
-        <section ref={ref} id="services" className={animated ? 'services services--animated' : 'services'}>
+        <section ref={ref} id="services" className={className}>
             <div className="container services__container">
                 <Title text="наши услуги" className="services__title services__title--services"/>
                 <ul className="services__list">
@@ -63,8 +87,8 @@ const Services = () => {
                         <ServiceItem key={nanoid()} text={el.text} title={el.title} itemClass={el.itemClass} paragraphClass={el.paragraphClass} initial={el.initial}/>)}
                 </ul>
                 <Title text="отраслевая экспертиза" className="services__title services__title--expertise"/>
-                <p className="services__expertise expertise">Наша отраслевая экспертиза наиболее
-                                                             развита в сферах:<br/>
+                <p ref={arrowRef} className="services__expertise expertise">Наша отраслевая экспертиза наиболее
+                                                                            развита в сферах:<br/>
                     <span className="expertise__list">
                     {
                         expertiseList.map(el =>
@@ -72,6 +96,15 @@ const Services = () => {
                     }
                     </span>
                 </p>
+            </div>
+            <div className="services__hello">Привет</div>
+            <div className="services__text">
+                <span className="services__text--title">Meet Up</span>
+                <span className="services__text--hello">Привет</span>
+                <p>Мы — executive recruitment компания Meet Up, охотники за светлыми головами.</p>
+                <p>Находим лучших руководителей для бизнесов и помогаем развивать управленческие команды. Верим, что
+                   каждый профессиональный контакт бесценен: мы одинаково заинтересованы в долгосрочном успехе как наших
+                   клиентов, так и кандидатов.</p>
             </div>
         </section>
     )

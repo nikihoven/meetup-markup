@@ -172,7 +172,6 @@
     }
 
     @media screen and (max-width: 1023px) {
-      top: 10px;
       left: 0;
       background-size: 80%;
     }
@@ -184,11 +183,14 @@
     width: 292px;
     height: 107px;
     background-image: url('images/wing-blue.png');
+    left: -35px;
 
     @media screen and (max-width: 1023px) {
       right: 0;
       left: unset;
-      background-size: 100%;
+      height: 90px;
+      background-size: contain;
+      background-position-x: right;
     }
   }
 }
@@ -198,7 +200,12 @@
     transform: rotateX(180deg);
     width: 327px;
     height: 103px;
+    right: 0;
+    left: unset;
+    background-position-x: right;
+    background-size: cover;
     background-image: url('images/wing-red.png');
+    top: 37px;
   }
 }
 

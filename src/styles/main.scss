@@ -9,7 +9,6 @@
     background-color: var(--color-light);
   }
 
-
   &__body {
     width: inherit;
     height: inherit;
@@ -106,6 +105,11 @@
 @keyframes fadeInTop {
   0% {
     opacity: 0;
+    transform: translateY(-110%);
+  }
+
+  10% {
+    opacity: 1;
     transform: translateY(-100%)
   }
   to {
@@ -117,8 +121,14 @@
 @keyframes fadeInTopWithLeftTransform {
   0% {
     opacity: 0;
-    transform: translateY(-100%) translateX(-50%);
+    transform: translateY(-110%) translateX(-50%);
   }
+
+  10% {
+    opacity: 1;
+    transform: translateY(-100%) translateX(-50%)
+  }
+
   to {
     opacity: 1;
     transform: translateY(0) translateX(-50%)
@@ -134,15 +144,14 @@
   }
 }
 
-
 .fadeInLeft {
+  transition: opacity 1s;
   animation: fadeInLeft 1s ease-out;
   opacity: 1;
-  transition: opacity 1s;
 }
 
 .fadeInRight {
+  transition: opacity 1s;
   animation: fadeInRight 1s ease-out;
   opacity: 1;
-  transition: opacity 1s;
 }
