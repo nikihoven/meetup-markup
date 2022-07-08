@@ -1,0 +1,195 @@
+.footer {
+  padding: 120px 0 500px;
+  background-color: var(--color-dark);
+
+  @media screen and (max-width: 1023px) {
+    padding: 120px 0 300px;
+    background-color: var(--color-light);
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 0 0 100px;
+  }
+
+  .container {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -260px;
+      left: 0;
+      width: 404px;
+      height: 1255px;
+      background-image: url('images/portal.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      opacity: 0;
+
+      @media screen and (max-width: 1279px) {
+        bottom: -400px;
+        width: 340px;
+      }
+
+      @media screen and (max-width: 1023px) {
+        bottom: 43%;
+        width: 100%;
+        height: unset;
+        background-image: url('images/portal-small.png');
+        aspect-ratio: 627 / 1259;
+      }
+
+      @media screen and (max-width: 767px) {
+        transform: translateX(-50%);
+        bottom: 65%;
+        left: 50%;
+        width: 80%;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      padding-top: 500px;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding-top: 0;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-areas: 'title title'
+                         'email socials'
+                         'phones .';
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    margin-left: auto;
+    gap: 40px;
+
+    @media screen and (max-width: 1279px) {
+      padding-top: 300px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -260px;
+      left: 0;
+      width: 199px;
+      height: 108px;
+      background-image: url('images/logo.png');
+      background-repeat: no-repeat;
+
+      @media screen and (max-width: 1279px) {
+        bottom: -200px;
+      }
+
+      @media screen and (max-width: 1023px) {
+        content: unset;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-elevon);
+    color: var(--color-light);
+    justify-self: center;
+    grid-area: title;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 1023px) {
+      color: var(--color-dark);
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media screen and (max-width: 767px) {
+      align-items: center;
+    }
+
+    &--email {
+      grid-area: email;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &--phones {
+      grid-area: phones;
+    }
+
+    &--socials {
+      justify-self: end;
+      grid-area: socials;
+    }
+  }
+
+  .socials {
+    &__list {
+      display: flex;
+      gap: 15px;
+    }
+
+    &__item {
+      width: 35px;
+      height: 35px;
+      fill: var(--color-light);
+
+      @media screen and (max-width: 1023px) {
+        fill: var(--color-dark);
+      }
+    }
+  }
+
+  &__subtitle, &__link {
+    font-family: var(--font-montserrat);
+    font-size: 19px;
+    color: var(--color-light);
+
+    @media screen and (max-width: 1023px) {
+      color: var(--color-dark);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+  }
+
+  &__link {
+    font-weight: 400;
+  }
+}
+
+.footer--animated {
+  .container {
+    &::after {
+      animation: fadeInTop 1s ease-out;
+      animation-fill-mode: forwards;
+
+      @media screen and (max-width: 767px) {
+        animation: fadeInTopWithLeftTransform 1s ease-out;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}

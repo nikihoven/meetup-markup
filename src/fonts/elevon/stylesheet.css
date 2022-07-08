@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Elevon';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./elevon.woff2') format('woff2'),
+    url('./elevon.woff') format('woff'),
+    url('./elevon.ttf') format('ttf')
+}

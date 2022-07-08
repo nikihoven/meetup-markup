@@ -1,0 +1,148 @@
+.page {
+  font-family: var(--font-main);
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-dark);
+
+  @media screen and (max-width: 1023px) {
+    background-color: var(--color-light);
+  }
+
+
+  &__body {
+    width: inherit;
+    height: inherit;
+  }
+
+  &__wrapper {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.container {
+  max-width: 1250px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (max-width: 1365px) {
+    max-width: 1140px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    max-width: 924px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    max-width: 622px;
+  }
+
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+    padding: 0 30px;
+  }
+
+  @media screen and (max-width: 574px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 479px) {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0)
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0)
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fadeInBottomWithLeftTransform {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fadeInTopWithLeftTransform {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%)
+  }
+}
+
+@keyframes translateFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0)
+  }
+}
+
+
+.fadeInLeft {
+  animation: fadeInLeft 1s ease-out;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.fadeInRight {
+  animation: fadeInRight 1s ease-out;
+  opacity: 1;
+  transition: opacity 1s;
+}

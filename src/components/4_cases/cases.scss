@@ -1,0 +1,40 @@
+.cases {
+  padding: 55px 0 170px;
+  background-color: var(--color-light);
+
+  .container {
+    @media screen and (max-width: 1023px) {
+      max-width: 722px;
+    }
+
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-montserrat);
+    color: var(--color-dark);
+    justify-self: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 15px;
+    padding-right: 250px;
+    padding-bottom: 15px;
+    padding-left: 250px;
+    border: 1.5px solid var(--color-blue);
+    border-radius: 12px;
+
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+      width: max-content;
+      margin-right: unset;
+      padding-right: 110px !important;
+      padding-left: 40px !important;
+    }
+  }
+
+  &__gallery {
+    margin-top: 65px;
+  }
+}

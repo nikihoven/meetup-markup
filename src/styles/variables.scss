@@ -1,0 +1,17 @@
+:root {
+  --color-dark: #000000;
+  --color-dark-transparent: rgba(0, 0, 0, 0.1);
+  --color-light: #ffffff;
+  --color-blue: #3211ff;
+  --color-blue-transparent-60: rgba(10, 10, 254, 0.6);
+  --color-blue-transparent-20: rgba(216, 210, 255, 0.19);
+  --color-red: #db0025;
+  --color-purple-transparent: rgba(102, 102, 249, 0.2);
+  --color-lavender-transparent: rgba(117, 94, 255, 0.47);
+  --box-shadow: 0 1px 2px var(--color-blue), 0 2px 4px 10px var(--color-lavender-transparent), 0 1px 8px var(--color-dark-transparent);
+  --box-shadow-blacked: 0 1px 2px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.1);
+  --font-elevon: 'Elevon', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-main: var(--font-montserrat);
+}
