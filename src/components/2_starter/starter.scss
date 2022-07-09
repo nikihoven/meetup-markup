@@ -113,6 +113,11 @@
       margin-bottom: 200px;
     }
 
+    @media screen and (max-width: 480px) {
+      font-size: 15px;
+      margin-bottom: 200px;
+    }
+
     &--1 {
       margin-right: 130px;
 

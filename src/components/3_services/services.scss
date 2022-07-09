@@ -419,7 +419,6 @@
         }
 
         &--primary {
-          box-shadow: var(--box-shadow);
           background: var(--color-light);
 
           @media screen and (max-width: 1023px) {
@@ -519,6 +518,14 @@
           visibility: hidden;
         }
       }
+
+      p {
+        animation: pulse 3s infinite;
+
+        @media screen and (max-width: 1023px) {
+          animation: unset;
+        }
+      }
     }
 
     &--mapping {
@@ -537,6 +544,14 @@
         @media screen and (max-width: 1023px) {
           display: none;
           visibility: hidden;
+        }
+      }
+
+      p {
+        animation: pulse 3s 1s infinite;
+
+        @media screen and (max-width: 1023px) {
+          animation: unset;
         }
       }
 
@@ -676,5 +691,17 @@
     @media screen and (max-width: 767px) {
       left: 0;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-tree);
+  }
+  70% {
+    box-shadow: 0 0 30px 10px var(--color-tree);
+  }
+  100% {
+    box-shadow: 0 0 0 0 var(--color-tree);
   }
 }
